@@ -1,0 +1,41 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mercedes-client-component
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    gitlab.com/project-slug: n1556/mercedes-client
+    backstage.io/kubernetes-id: mercedes-client
+    argocd/app-name: your-coaching-mercedes-client-production
+    sonarqube.org/project-key: 'p6685_ebanking-api_AYSAPllKVJNnDokEon-u'
+  links:
+    - title: Development link
+      url: https://shop.dev.mercedes.neotechsolutions.org
+    - title: Staging link
+      url: https://shop.stg.mercedes.neotechsolutions.org
+    - title: Production link
+      url: https://shop.mercedes.neotechsolutions.org
+    - title: Workflows
+      url: https://argowf.utils.neotechsolutions.org/workflows/argo-workflows
+spec:
+  type: service
+  lifecycle: production
+  owner: mercedes-devs
+  system: demo
+  providesApis:
+    - mercedes-client-component-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: mercedes-client-component-api
+  description: Hello World example for mercedes-client
+spec:
+  type: openapi
+  lifecycle: production
+  system: mercedes-shop
+  owner: mercedes-devs
+  providesApis:
+    - storage.gms-ops.io/v1
+  definition: 
+    $text: https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore.yaml
