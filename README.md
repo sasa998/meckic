@@ -48,12 +48,7 @@ The Medusa Next.js Starter is built with:
 
 ## Setting up the environment variables
 
-Navigate into your projects directory and get your enviroment variables ready:
-
-```shell
-cd nextjs-starter-medusa/
-mv .env.template .env.local
-```
+Before running the application, local environment variables need to be set by creating `.env.local` file in root folder. This file needs to have all variables like any other `.env.[mode]` file.
 
 ### Install dependencies
 
