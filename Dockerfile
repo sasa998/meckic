@@ -5,6 +5,7 @@ WORKDIR /app
 ARG environment
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* ./
+ENV NEXT_TELEMETRY_DISABLED 1
 RUN yarn install
 
 # Rebuild the source code only when needed
@@ -12,10 +13,7 @@ FROM node:16-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-
-ENV NEXT_TELEMETRY_DISABLED 1
-
-RUN yarn build
+RUN yarn build:$environment
 
 # Production image, copy all the files and run next
 FROM node:16-alpine AS runner
