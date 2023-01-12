@@ -10,4 +10,4 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN yarn install && yarn build:$environment
 USER nextjs
 EXPOSE 8000
-CMD ["next", "start"]
+CMD ["yarn", "start"]
