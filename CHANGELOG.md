@@ -1,3 +1,13 @@
+## [1.0.1](https://gitlab.com/n1556/mercedes-client/compare/v1.0.0...v1.0.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **dockerfile:** change user before install ([8bb89ac](https://gitlab.com/n1556/mercedes-client/commit/8bb89acdccece16d22708fea09f68568dd2e6758))
+* **dockerfile:** change user before install ([6515b45](https://gitlab.com/n1556/mercedes-client/commit/6515b4506696e95f11df52e5b18a3fc3c667d6c1))
+* **dockerfile:** chown after build ([e479c10](https://gitlab.com/n1556/mercedes-client/commit/e479c10a948299c86a895ca444b0278a634d03c7))
+* **dockerfile:** chown after build ([75fc92d](https://gitlab.com/n1556/mercedes-client/commit/75fc92d0040464a5a224fedc714a12cd8bde0be7))
+
 # 1.0.0 (2023-01-13)
 
 
