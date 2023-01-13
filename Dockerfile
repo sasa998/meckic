@@ -3,8 +3,8 @@ ARG environment
 RUN addgroup --system --gid 1001 nodejs && \
      adduser --system --uid 1001 nextjs && \
      apk add --no-cache libc6-compat && \
-     mkdir -p /app && chown -R nextjs:nodejs /app
-WORKDIR /app
+     mkdir -p /home/nextjs/app && chown -R nextjs:nodejs /home/nextjs/app
+WORKDIR /home/nextjs/app
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN yarn install && yarn build:$environment
